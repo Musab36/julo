@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "449146273931",
+    "firebase_url": "https://atheist-quotes-48972.firebaseio.com",
+    "project_id": "atheist-quotes-48972",
+    "storage_bucket": "atheist-quotes-48972.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449146273931:android:a603d9866a3a0da4",
+        "android_client_info": {
+          "package_name": "com.salajim.musab.atheistquotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449146273931-oumeihsve9id17t1fhu1du62dp20rbsh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDy2Eh6G_Z3Z3SrXi5eEUDCMZ1FbloXMZQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
