@@ -28,7 +28,8 @@ public static final String TAG = "MainActivity";
         SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new TopFragment(), "Top");
         adapter.addFragment(new NewFragment(), "New");
-        adapter.addFragment(new FavoriteFragment(), "Favourites");
+        adapter.addFragment(new FavoriteFragment(), "Favourite");
+        adapter.addFragment(new ForumFragment(), "Forum");
 
         viewPager.setAdapter(adapter);
     }
