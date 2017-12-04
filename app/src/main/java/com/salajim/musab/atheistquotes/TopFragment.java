@@ -1,13 +1,15 @@
 package com.salajim.musab.atheistquotes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,8 +29,12 @@ public class TopFragment extends Fragment {
     FirebaseDatabase database;
     DatabaseReference mRef;
     //List<Quotes> quotes;
-    private ArrayList<String> topQuotes = new ArrayList<>();
-    ListView listView;
+     private ArrayList<Quotes> mQuotes = new ArrayList<>();
+    private QuotesAdapter mAdapter;
+    //ListView listView;
+    //private String[] mQoutes;
+    RecyclerView recyclerView;
+    private FloatingActionButton fab;
 
     public TopFragment() {}
 
@@ -36,8 +42,18 @@ public class TopFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.top_fragment, container, false);
+        fab = (FloatingActionButton) view.findViewById(R.id.fab);
 
-        listView = (ListView) view.findViewById(R.id.listView);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AddQuotes.class);
+                startActivity(intent);
+            }
+        });
+
+
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         database = FirebaseDatabase.getInstance();
         mRef = database.getReference("top");
 
@@ -47,11 +63,14 @@ public class TopFragment extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()) {
-                    topQuotes.add(dataSnapshot1.getValue().toString());
+                    mQuotes.add(dataSnapshot1.getValue(Quotes.class));
                 }
 
-                ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, topQuotes);
-                listView.setAdapter(adapter);
+                mAdapter = new QuotesAdapter(getActivity(), mQuotes);
+                recyclerView.setAdapter(mAdapter);
+                RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+                recyclerView.setLayoutManager(layoutManager);
+                recyclerView.setHasFixedSize(true);
             }
 
             @Override

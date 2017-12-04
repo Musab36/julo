@@ -1,19 +1,17 @@
 package com.salajim.musab.atheistquotes;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -24,37 +22,29 @@ import java.util.ArrayList;
 public class NewFragment extends Fragment {
     public static final String TAG = "NewFragment";
 
-    private ArrayList<String> newQuotes = new ArrayList<>();
+    private FloatingActionButton fab;
+
+    private ArrayList<Quotes> mQuotes = new ArrayList<>();
+    private QuotesAdapter mAdapter;
     FirebaseDatabase database;
     DatabaseReference mRef;
-    ListView listView;
+    RecyclerView recyclerView;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.new_fragment, container, false);
+        fab = (FloatingActionButton) view.findViewById(R.id.fab);
 
-        listView = (ListView) view.findViewById(R.id.listView);
-        database = FirebaseDatabase.getInstance();
-        mRef = database.getReference("new");
-
-        mRef.addValueEventListener(new ValueEventListener() {
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren()) {
-                    newQuotes.add(dataSnapshot1.getValue().toString());
-                }
-
-                ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, newQuotes);
-                listView.setAdapter(adapter);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AddNewQuotes.class);
+                startActivity(intent);
             }
         });
+
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
 
         return view;
     }
