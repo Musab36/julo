@@ -1,4 +1,4 @@
-package com.salajim.musab.atheistquotes;
+package com.salajim.musab.atheistquotes.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +16,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.salajim.musab.atheistquotes.R;
+import com.salajim.musab.atheistquotes.activities.AddQuotes;
+import com.salajim.musab.atheistquotes.adapters.QuotesAdapter;
+import com.salajim.musab.atheistquotes.models.Quotes;
 
 import java.util.ArrayList;
 
@@ -28,11 +32,9 @@ public class TopFragment extends Fragment {
 
     FirebaseDatabase database;
     DatabaseReference mRef;
-    //List<Quotes> quotes;
      private ArrayList<Quotes> mQuotes = new ArrayList<>();
     private QuotesAdapter mAdapter;
-    //ListView listView;
-    //private String[] mQoutes;
+
     RecyclerView recyclerView;
     private FloatingActionButton fab;
 
@@ -42,6 +44,7 @@ public class TopFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.top_fragment, container, false);
+
         fab = (FloatingActionButton) view.findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
@@ -51,7 +54,6 @@ public class TopFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         database = FirebaseDatabase.getInstance();
@@ -70,7 +72,6 @@ public class TopFragment extends Fragment {
                 recyclerView.setAdapter(mAdapter);
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
                 recyclerView.setLayoutManager(layoutManager);
-                recyclerView.setHasFixedSize(true);
             }
 
             @Override

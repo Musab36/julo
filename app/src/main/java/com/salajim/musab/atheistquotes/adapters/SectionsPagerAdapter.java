@@ -1,4 +1,4 @@
-package com.salajim.musab.atheistquotes;
+package com.salajim.musab.atheistquotes.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

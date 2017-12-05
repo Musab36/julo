@@ -1,4 +1,4 @@
-package com.salajim.musab.atheistquotes;
+package com.salajim.musab.atheistquotes.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.salajim.musab.atheistquotes.models.Quotes;
+import com.salajim.musab.atheistquotes.R;
 
 import java.util.ArrayList;
 import java.util.List;

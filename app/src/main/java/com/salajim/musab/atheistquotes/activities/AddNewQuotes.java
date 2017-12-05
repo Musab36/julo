@@ -1,7 +1,9 @@
-package com.salajim.musab.atheistquotes;
+package com.salajim.musab.atheistquotes.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.salajim.musab.atheistquotes.R;
 
 public class AddNewQuotes extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.salajim.musab.atheistquotes;
+package com.salajim.musab.atheistquotes.models;
 
 /**
  * Created by Musab on 11/26/2017.
