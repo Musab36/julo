@@ -8,7 +8,8 @@
         android:id="@+id/card_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        card_view:cardCornerRadius="10dp">
+        card_view:cardCornerRadius="10dp"
+        card_view:cardBackgroundColor="@color/colorPrimary">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -30,15 +31,10 @@
                 android:id="@+id/authorQuote"
                 android:padding="10dp"
                 android:text="Quote placeholder"
-                android:textSize="15sp" />
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:textColor="@android:color/white"/>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignRight="@+id/authorQuote"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/ic_favorite_border_black_24dp"
-                android:id="@+id/heart" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -46,7 +42,9 @@
                 android:layout_below="@+id/authorQuote"
                 android:layout_alignParentRight="true"
                 android:text="Carl Segan"
-                android:textSize="15sp"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:textColor="@android:color/white"
                 android:id="@+id/authorName" />
 
         </RelativeLayout>

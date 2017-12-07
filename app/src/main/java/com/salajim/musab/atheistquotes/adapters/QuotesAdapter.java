@@ -5,13 +5,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.salajim.musab.atheistquotes.models.Quotes;
 import com.salajim.musab.atheistquotes.R;
+import com.salajim.musab.atheistquotes.models.Quotes;
 
 import java.util.ArrayList;
 
@@ -54,11 +53,9 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.QuotesView
         return mQuotes.size();
     }
 
-    public class QuotesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        //@Bind(R.id.authorImage) ImageView mAuthorImage;
+    public class QuotesViewHolder extends RecyclerView.ViewHolder {
         @Bind(R.id.authorQuote) TextView mAuthorQuote;
         @Bind(R.id.authorName) TextView mAuthorName;
-        @Bind(R.id.heart) ImageView mHeart;
 
         private Context mContext;
 
@@ -66,7 +63,6 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.QuotesView
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
-            mHeart.setOnClickListener(this);
         }
 
         public void bindQuotes(Quotes quotes) {
@@ -80,10 +76,6 @@ public class QuotesAdapter extends RecyclerView.Adapter<QuotesAdapter.QuotesView
             mAuthorName.setText(quotes.getAuthor());
         }
 
-        @Override
-        public void onClick(View view) {
-
-        }
     }
 
 }

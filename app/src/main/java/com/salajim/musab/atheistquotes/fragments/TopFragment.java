@@ -72,6 +72,7 @@ public class TopFragment extends Fragment {
                 recyclerView.setAdapter(mAdapter);
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
                 recyclerView.setLayoutManager(layoutManager);
+                recyclerView.setHasFixedSize(true);
             }
 
             @Override

@@ -33,7 +33,7 @@ public static final String TAG = "MainActivity";
         SectionsPagerAdapter adapter = new SectionsPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new TopFragment(), "Quotes");
         adapter.addFragment(new ForumFragment(), "Forum");
-        adapter.addFragment(new FavoriteFragment(), "Favourites");
+        adapter.addFragment(new FavoriteFragment(), "Testimonies");
 
         viewPager.setAdapter(adapter);
     }
