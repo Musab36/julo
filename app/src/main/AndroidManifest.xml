@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.AddQuotes" />
-        <activity android:name=".activities.AddNewQuotes"></activity>
+        <activity android:name=".activities.AddNewQuotes" />
+        <activity android:name=".activities.ForumActivity"></activity>
     </application>
 
 </manifest>

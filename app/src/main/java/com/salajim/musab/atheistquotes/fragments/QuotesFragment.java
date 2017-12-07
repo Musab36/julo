@@ -27,8 +27,8 @@ import java.util.ArrayList;
  * Created by Musab on 11/10/2017.
  */
 
-public class TopFragment extends Fragment {
- public static final String TAG = "TopFragment";
+public class QuotesFragment extends Fragment {
+ public static final String TAG = "QuotesFragment";
 
     FirebaseDatabase database;
     DatabaseReference mRef;
@@ -38,12 +38,12 @@ public class TopFragment extends Fragment {
     RecyclerView recyclerView;
     private FloatingActionButton fab;
 
-    public TopFragment() {}
+    public QuotesFragment() {}
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.top_fragment, container, false);
+        View view = inflater.inflate(R.layout.quotes_fragment, container, false);
 
         fab = (FloatingActionButton) view.findViewById(R.id.fab);
 
