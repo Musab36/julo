@@ -43,7 +43,9 @@ public class AddQuotes extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        addTopQuotes();
+        if(v == mSubmitBtn) {
+            addTopQuotes();
+        }
     }
 
     private void addTopQuotes() {

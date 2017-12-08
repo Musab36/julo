@@ -37,7 +37,7 @@
         android:background="@drawable/edittext_style"/>
 
     <info.hoang8f.widget.FButton
-        android:id="@+id/addOwnerBtn"
+        android:id="@+id/submitQuizBtn"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Submit"
