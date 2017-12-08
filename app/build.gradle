@@ -38,6 +38,7 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'org.parceler:parceler:1.1.6'
+    compile 'info.hoang8f:fbutton:1.0.5'
 }
 
 apply plugin: 'com.google.gms.google-services'
