@@ -30,11 +30,10 @@ import java.util.ArrayList;
 public class ForumFragment extends Fragment {
     public static final String TAG = "ForumFragment";
 
-    private ArrayList<Questions> mQuestions = new ArrayList<>();
-    private ForumQuestionsAdapter mAdapter;
-
     FirebaseDatabase database;
     DatabaseReference mRef;
+    private ArrayList<Questions> mQuestions = new ArrayList<>();
+    private ForumQuestionsAdapter mAdapter;
 
     RecyclerView recyclerView;
 
