@@ -58,7 +58,7 @@ public class ForumQuestionsAdapter extends RecyclerView.Adapter<ForumQuestionsAd
 
         public void bindQuestions(Questions questions) {
 
-            mNameTextView.setText(questions.getName() + "Says:");
+            mNameTextView.setText(questions.getName() + " Says:");
             mQuestionTextView.setText(questions.getQuestion());
 
         }

@@ -19,7 +19,7 @@
                 android:layout_height="wrap_content"
                 android:text="Jeff Says:"
                 android:id="@+id/nameTextView"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/nameTextView"
                 android:id="@+id/questionTextView"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:textStyle="italic" />
 
         </RelativeLayout>
