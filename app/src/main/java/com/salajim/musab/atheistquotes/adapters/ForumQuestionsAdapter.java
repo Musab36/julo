@@ -1,6 +1,7 @@
 package com.salajim.musab.atheistquotes.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +9,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.salajim.musab.atheistquotes.R;
+import com.salajim.musab.atheistquotes.activities.AnswersActivity;
 import com.salajim.musab.atheistquotes.models.Questions;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
@@ -45,7 +49,7 @@ public class ForumQuestionsAdapter extends RecyclerView.Adapter<ForumQuestionsAd
         return mQuestions.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         @Bind(R.id.nameTextView) TextView mNameTextView;
         @Bind(R.id.questionTextView) TextView mQuestionTextView;
         private Context mContext;
@@ -54,6 +58,16 @@ public class ForumQuestionsAdapter extends RecyclerView.Adapter<ForumQuestionsAd
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext = itemView.getContext();
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, AnswersActivity.class);
+            intent.putExtra("position", itemPosition);
+            intent.putExtra("questions", Parcels.wrap(mQuestions));
+            mContext.startActivity(intent);
         }
 
         public void bindQuestions(Questions questions) {
