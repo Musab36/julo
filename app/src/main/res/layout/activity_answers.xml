@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,39 +11,13 @@
         android:layout_height="match_parent"
         android:id="@+id/recyclerView" />
 
-    <EditText
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp"
-        android:layout_weight="1"
-        android:hint="Name..."
-        android:textColorHint="@color/colorPrimary"
-        android:textColor="@color/colorPrimary"
-        android:id="@+id/nameEdittext"
-        android:maxHeight="180dp" />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="10dp"
+        app:srcCompat="@drawable/ic_add_white_24dp" />
 
-        <EditText
-            android:layout_width="300dp"
-            android:layout_height="50dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:hint="Reply..."
-            android:textColorHint="@color/colorPrimary"
-            android:textColor="@color/colorPrimary"
-            android:id="@+id/answerEdittext"
-            android:layout_below="@+id/nameEditText"
-            android:maxHeight="180dp" />
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:layout_alignParentBottom="true"
-            android:padding="4dp"
-            app:srcCompat="@drawable/sendit"
-            android:layout_toRightOf="@+id/answerEdittext"
-            android:id="@+id/sendButton" />
-
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
